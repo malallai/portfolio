@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  job: MyString
+  location: MyString
+  from: 2020-03-10 16:33:17
+  to: 2020-03-10 16:33:17
+  description: MyString
+
+two:
+  name: MyString
+  job: MyString
+  location: MyString
+  from: 2020-03-10 16:33:17
+  to: 2020-03-10 16:33:17
+  description: MyString

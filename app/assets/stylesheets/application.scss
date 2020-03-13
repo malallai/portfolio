@@ -1,0 +1,404 @@
+// $navbar-default-bg: #312312;
+// $light-orange: #ff8c00;
+// $navbar-default-color: $light-orange;
+
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "bootstrap";
+@import "font-mfizz";
+
+@font-face {
+  font-family: 'Muli';
+  src: url('Muli.ttf')
+}
+
+@font-face {
+  font-family: 'SairaExtraCondensed';
+  src: url('SairaExtraCondensed.ttf')
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  font-family: 'Muli',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+body > .container-fluid {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  height: 100%;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+// Fixes bootstrap nav-brand container overlap
+@include media-breakpoint-down(xs) {
+  .container {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+section {
+  padding: 2rem;
+  border-bottom: 1px solid #333;
+  min-height: 100vh;
+  display: flex;
+
+  .pane-title {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+  }
+
+  .pane-content {
+    margin: auto 0;
+    max-width: 50rem;
+
+    &.max-width-75 {
+      max-width: 75rem;
+    }
+
+    h1 {
+      font-family: 'SairaExtraCondensed',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
+      font-size: 6rem;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    .text-big {
+      color: #777;
+    }
+
+    .subtitle-text {
+      text-transform: uppercase;
+      color: #bbb;
+      font-family: 'SairaExtraCondensed',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
+      font-size: 1.5rem;
+
+      a {
+        text-decoration: none;
+        color: $primary;
+      }
+    }
+
+    .pres-description {
+      color: #bbb;
+      text-align: justify;
+    }
+
+    .socials {
+      .icon {
+        display: inline-block;
+        width: 3.5rem;
+        height: 3.5rem;
+        background-color: #333;
+        color: #fff;
+        border-radius: 100%;
+        text-align: center;
+        font-size: 1.5rem;
+        line-height: 3.5rem;
+        margin-right: 1rem;
+
+        &:hover {
+          background-color: $primary;
+        }
+      }
+    }
+  }
+}
+
+.skills {
+  .skill {
+    margin-rigt: .5rem;
+    display: inline-block;
+    width: 3.5rem;
+    height: 3.5rem;
+    text-align: center;
+    line-height: 3.5rem;
+    font-size: 3rem;
+    color: #888;
+    flex: auto;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+}
+
+.experience {
+  &:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
+
+  .experience-title {
+    .name {
+      text-transform: uppercase;
+      font-size: 1.75rem;
+      font-weight: bold;
+    }
+
+    .date {
+      color: $primary;
+    }
+  }
+
+  .experience-subtitle {
+    color: #888;
+    text-transform: uppercase;
+    font-size: 1rem;
+  }
+
+  .description {
+    text-align: justify;
+  }
+}
+
+body {
+  padding-left: 17rem;
+  padding-top: 0;
+  height: 100vh;
+}
+
+// Masquerade alert shouldn't have a bottom margin
+body > .alert {
+  margin-bottom: 0;
+}
+
+html {
+  scrollbar-color: hsla(0,0%,100%,.2) transparent;
+}
+
+.big-title {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.bb-white {
+  border-bottom: 2px solid;
+}
+
+body > .container {
+  padding: 40px 15px;
+}
+
+body, table, .table {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.table-hover tbody tr:hover {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.mr-3-all {
+  * {
+    margin-right: 1rem !important;
+  }
+}
+
+.locale-select {
+  color: rgba(0, 0, 0, .7);
+
+  &:hover {
+    color: rgba(0, 0, 0, .90);
+    text-decoration: none;
+  }
+
+  &.locale-selected {
+    color: green;
+    font-weight: bold;
+  }
+
+  &.nav-link {
+    display: inline-block !important;
+  }
+}
+
+.page-link {
+  background-color: #333;
+  border-color: rgba(0, 0, 0, .15);
+  color: $navbar-dark-color;
+
+  &:hover {
+    color: $navbar-dark-color;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: rgba(0, 0, 0, .15);
+  }
+}
+
+@media (max-width: 992px) {
+  .navbar {
+    display: none !important;
+  }
+
+  body {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .big-title {
+    font-size: 1.5rem;
+  }
+
+  .pane-title {
+    font-size: 2rem !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .little-nav {
+    display: none;
+  }
+}
+
+.little-nav {
+  width: 100%;
+
+  .navbar-brand {
+    margin-left: 1rem;
+  }
+
+  .items {
+    margin-right: 1rem;
+  }
+}
+
+.account-avatar {
+  width: 15rem;
+  height: 15rem;
+}
+
+.navbar-hyper-dark {
+  .navbar-brand {
+    color: $navbar-dark-brand-color;
+
+    @include hover-focus() {
+      color: $navbar-dark-brand-hover-color;
+    }
+  }
+
+  .navbar-nav {
+    .nav-link {
+      color: $navbar-dark-color;
+
+      @include hover-focus() {
+        color: $navbar-dark-hover-color;
+      }
+
+      &.disabled {
+        color: $navbar-dark-disabled-color;
+      }
+    }
+
+    .show > .nav-link,
+    .active > .nav-link,
+    .nav-link.show,
+    .nav-link.active {
+      color: $navbar-dark-active-color;
+    }
+  }
+
+  .navbar-toggler {
+    color: $navbar-dark-color;
+    border-color: $navbar-dark-toggler-border-color;
+  }
+
+  .navbar-toggler-icon {
+    background-image: escape-svg($navbar-dark-toggler-icon-bg);
+  }
+
+  .navbar-text {
+    color: $navbar-dark-color;
+    a {
+      color: $navbar-dark-active-color;
+
+      @include hover-focus() {
+        color: $navbar-dark-active-color;
+      }
+    }
+  }
+}
+
+.side-nav {
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  width: 17rem;
+  height: 100vh;
+}
+
+.navbar-collapse {
+  align-items: flex-start;
+  flex-grow: 0;
+  width: 100%;
+  margin-bottom: auto;
+}
+
+.navbar-brand {
+  display: flex;
+  margin: auto auto 0;
+  padding: .5rem;
+
+  .img-profile {
+    max-width: 10rem;
+    max-height: 10rem;
+    border: .25rem solid
+    rgba(255,255,255,.2);
+  }
+
+  .rounded-circle {
+    border-radius: 50% !important;
+  }
+}
+
+.navbar-nav {
+  width: 100%;
+  .nav-item {
+    width: 100%;
+    .nav-link {
+      font-weight: 800;
+      letter-spacing: .05rem;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.5);
+
+      &.active {
+        color: #fff;
+      }
+    }
+  }
+}
+
+.bg-hyper-dark {
+  background-color: #333;
+
+  .dropdown-item {
+    color: $navbar-dark-color;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+  }
+
+  .dropdown-divider {
+    border-top: 1px solid #212121;
+  }
+}
+
+.body-hyper-dark {
+  background-color: #212121;
+}

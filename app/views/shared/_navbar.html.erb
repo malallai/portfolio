@@ -1,0 +1,68 @@
+<% if user_masquerade? %>
+  <div class="alert alert-warning text-center">
+    You're logged in as <b><%= current_user.name %> (<%= current_user.email %>)</b>
+    <%= link_to back_masquerade_path(current_user) do %><%= icon("fas", "times") %> Logout <% end %>
+  </div>
+<% end %>
+
+<nav class="little-nav navbar-hyper-dark bg-hyper-dark">
+  <div class="d-flex flex-row">
+    <a class="navbar-brand" href="#">Malo ALLAIN</a>
+    <div class="d-flex flex-row float-right items">
+      <% if user_signed_in? %>
+        <%= link_to 'Admin', admin_root_path, class: "navbar-brand" %>
+        <%= link_to 'Déconnexion', destroy_user_session_path, class: "navbar-brand", :method => :delete %>
+      <% else  %>
+        <%= link_to 'Connexion', new_user_session_path, class: "navbar-brand" %>
+      <% end %>
+    </div>
+  </div>
+</nav>
+
+<nav class="navbar navbar-expand-lg navbar-hyper-dark bg-hyper-dark fixed-top side-nav" id="sideNav">
+  <a class="navbar-brand js-scroll-trigger" href="#page-top">
+    <span class="d-block d-lg-none">Malo ALLAIN</span>
+    <span class="d-none d-lg-block">
+      <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="<%= image_path("malallai.jpg") %>" alt="">
+    </span>
+  </a>
+
+  <div class="navbar-collapse" id="navbarMain">
+    <ul class="navbar-nav d-flex flex-column">
+      <% unless @presentations.nil? %>
+        <% @presentations.each do |presentation| %>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#<%= presentation.pane_name %>"><%= presentation.title %></a>
+          </li>
+        <% end %>
+      <% end %>
+      <% unless @panes.nil? %>
+        <% @panes.each do |pane| %>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#<%= pane.pane_name %>"><%= pane.title %></a>
+          </li>
+        <% end %>
+      <% end %>
+      <% unless @skills.nil? %>
+        <% @skills.each do |skill| %>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#<%= skill.pane_name %>"><%= skill.title %></a>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="collpase navbar-collapse mb-0">
+    <ul class="navbar-nav d-flex flex-column">
+      <li class="nav-item">
+        <% if user_signed_in? %>
+          <%= link_to 'Admin', admin_root_path, class: "nav-link" if current_user.admin? %>
+          <%= link_to 'Déconnexion', destroy_user_session_path, class: "nav-link", :method => :delete %>
+        <% else  %>
+          <%= link_to 'Connexion', new_user_session_path, class: "nav-link" %>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</nav>

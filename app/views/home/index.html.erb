@@ -1,0 +1,73 @@
+<% @presentations.each do |presentation| %>
+  <section id="<%= presentation.pane_name %>" class="d-flex flex-column">
+    <div class="pane-content">
+      <div class="w-100 d-flex flex-column">
+        <div class="mb-5">
+          <h1><%= presentation.firstname %> <span class="text-big"><%= presentation.lastname %></span></h1>
+          <span class="subtitle-text">
+          <%= presentation.address %> · <a href="mailto:<%= presentation.mail %>"><%= presentation.mail %></a>
+        </span>
+        </div>
+        <div class="pres-description">
+          <span><%= presentation.description %></span>
+        </div>
+        <div class="socials mt-5">
+          <% presentation.socials.each do |social| %>
+            <a class="icon" href="<%= social.link %>" aria-label="<%= social.name %>"><i class="<%= social.icon.value %>"></i></a>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </section>
+<% end %>
+<% @panes.each do |pane| %>
+  <section id="<%= pane.pane_name %>" class="d-flex flex-column">
+    <div class="pane-content max-width-75">
+      <div class="w-100 d-flex flex-column">
+        <div class="pane-title mb-5">
+          <span><%= pane.title %></span>
+        </div>
+        <div class="experiences">
+          <% pane.experiences.reverse.each do |experience| %>
+            <div class="experience">
+              <div class="experience-title d-flex flex-row flex-wrap">
+                <div class="name mr-auto">
+                  <span><%= experience.job %></span>
+                </div>
+                <div class="date d-flex">
+                  <span><%= experience.from.nil? ? 'Today' : experience.from.strftime('%b %Y') %> - <%= experience.to.nil? ? 'Present' : experience.to.strftime('%b %Y') %></span>
+                </div>
+              </div>
+              <div class="experience-subtitle">
+                <span><%= experience.location %></span>
+              </div>
+              <div class="description d-flex flex-column">
+                <% experience.description.split('\n').each do |desc| %>
+                  <span><%= desc %></span>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </section>
+<% end %>
+<% @skills.each do |skill| %>
+  <section id="<%= skill.pane_name %>" class="d-flex flex-column">
+    <div class="pane-content max-width-75">
+      <div class="w-100 d-flex flex-column">
+        <div class="pane-title mb-5">
+          <span><%= skill.title %></span>
+        </div>
+        <div class="skills d-flex flex-row flex-wrap">
+          <% skill.icon.each do |icon| %>
+            <div class="skill" aria-label="<%= icon.name %>">
+              <i class="<%= icon.value %>"></i>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </section>
+<% end %>

@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pane_name: MyString
+  title: MyString
+
+two:
+  pane_name: MyString
+  title: MyString
